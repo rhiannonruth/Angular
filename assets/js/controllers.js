@@ -1,17 +1,15 @@
-toDoApp.controller('ToDoController', function() {
+toDoApp.controller('ToDoController', ['ToDoFactory', function(ToDoFactory) {
 
   var self = this;
 
-  self.todos = [{ text: "ToDo1", completed: true },
-                { text: "ToDo2", completed: false},
-                { text: "ToDo3", completed: false }];
+  self.todos = [];
 
   self.addToDo = function(toDo) {
-    self.todos.push({text: toDo, completed: false});
+    self.todos.push(new ToDoFactory(toDo));
   };
 
   self.removeToDo = function(toDo) {
     index = self.todos.indexOf(toDo);
     self.todos.splice(index,1);
   };
-});
+}]);

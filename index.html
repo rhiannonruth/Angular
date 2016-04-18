@@ -5,6 +5,7 @@
   <script src="assets/js/angular.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/controllers.js"></script>
+  <script src="assets/js/todofactory.js"></script>
 </head>
 <body>
   <h1>ToDo List</h1>
@@ -12,6 +13,7 @@
     <ul>
       <li ng-repeat="todo in ctrl.todos">
         {{todo.text}}: {{todo.completed ? "completed" : "not completed"}}
+        <button ng-click="todo.complete();">Complete</button>
         <button ng-click="ctrl.removeToDo(toDo)">Remove ToDo</button>
       </li>
     </ul>
