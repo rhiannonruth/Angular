@@ -4,14 +4,14 @@
   <title>Simple page</title>
   <script src="assets/js/angular.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/controllers.js"></script>
 </head>
 <body>
-  <h1>Simple page</h1>
-  <div>
-    <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <hr/>
-    <h1>Hello {{yourName}}!</h1>
+  <h1>ToDo List</h1>
+  <div ng-controller="ToDoController as ctrl">
+    <ul>
+      <li ng-repeat="todo in ctrl.todos">{{todo}}</li>
+    </ul>
   </div>
 </body>
 </html>
