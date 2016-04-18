@@ -10,8 +10,13 @@
   <h1>ToDo List</h1>
   <div ng-controller="ToDoController as ctrl">
     <ul>
-      <li ng-repeat="todo in ctrl.todos">{{todo}}</li>
+      <li ng-repeat="todo in ctrl.todos">
+        {{todo.text}}: {{todo.completed ? "completed" : "not completed"}}
+        <button ng-click="ctrl.removeToDo(toDo)">Remove ToDo</button>
+      </li>
     </ul>
+    <input type='text' ng-model='toDo'>
+    <button ng-click="ctrl.addToDo(toDo)">Add ToDo</button>
   </div>
 </body>
 </html>
