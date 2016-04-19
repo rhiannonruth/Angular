@@ -1,8 +1,8 @@
-toDoApp.controller('ToDoController', ['ToDoFactory', function(ToDoFactory) {
+toDoApp.controller('ToDoController', ['ToDoFactory', 'ToDoFetcher', function(ToDoFactory, ToDoFetcher) {
 
   var self = this;
 
-  self.todos = [];
+  self.todos = ToDoFetcher.index();
 
   self.addToDo = function(toDo) {
     self.todos.push(new ToDoFactory(toDo));
